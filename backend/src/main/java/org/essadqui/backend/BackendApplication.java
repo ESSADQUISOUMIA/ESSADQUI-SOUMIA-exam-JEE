@@ -1,5 +1,12 @@
 package org.essadqui.backend;
 
+import org.essadqui.backend.entities.*;
+import org.essadqui.backend.enums.*;
+import org.essadqui.backend.repositories.*;
+import org.springframework.boot.*;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import java.util.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BackendApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AssuranceApplication.class, args);
+        SpringApplication.run(BackendApplication.class, args);
     }
 
     @Bean
@@ -15,7 +22,6 @@ public class BackendApplication {
                                ContratAssuranceRepository contratRepo,
                                PaiementRepository paiementRepo) {
         return args -> {
-            // Créer des clients
             List.of("Ahmed Benali", "Sara Idrissi", "Omar Chakir").forEach(nom -> {
                 Client c = new Client();
                 c.setNom(nom);
@@ -23,7 +29,6 @@ public class BackendApplication {
                 clientRepo.save(c);
             });
 
-            // Contrat automobile
             Client c1 = clientRepo.findAll().get(0);
             ContratAutomobile ca = new ContratAutomobile();
             ca.setClient(c1);
@@ -37,7 +42,6 @@ public class BackendApplication {
             ca.setModele("Corolla");
             contratRepo.save(ca);
 
-            // Contrat habitation
             Client c2 = clientRepo.findAll().get(1);
             ContratHabitation ch = new ContratHabitation();
             ch.setClient(c2);
@@ -51,7 +55,6 @@ public class BackendApplication {
             ch.setSuperficie(85.0);
             contratRepo.save(ch);
 
-            // Contrat santé
             Client c3 = clientRepo.findAll().get(2);
             ContratSante cs = new ContratSante();
             cs.setClient(c3);
@@ -64,18 +67,12 @@ public class BackendApplication {
             cs.setNbPersonnesCouvertes(4);
             contratRepo.save(cs);
 
-            // Paiement
             Paiement p = new Paiement();
             p.setContrat(ca);
             p.setDate(new Date());
             p.setMontant(350.0);
             p.setType(TypePaiement.MENSUALITE);
             paiementRepo.save(p);
-
-            System.out.println("=== Clients ===");
-            clientRepo.findAll().forEach(System.out::println);
-            System.out.println("=== Contrats ===");
-            contratRepo.findAll().forEach(System.out::println);
         };
     }
 }

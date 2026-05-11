@@ -1,6 +1,5 @@
 package org.essadqui.backend.web;
 
-
 import lombok.AllArgsConstructor;
 import org.essadqui.backend.dtos.ContratDTO;
 import org.essadqui.backend.entities.Paiement;

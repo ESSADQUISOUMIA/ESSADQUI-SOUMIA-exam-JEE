@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name = "paiements")
 @Data @AllArgsConstructor @NoArgsConstructor
-public class Paiment {
+public class Paiement {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

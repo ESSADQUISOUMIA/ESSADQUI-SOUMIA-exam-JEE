@@ -1,6 +1,5 @@
 package org.essadqui.backend.web;
 
-// ClientRestController.java
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.essadqui.backend.entities.Client;
@@ -41,7 +40,7 @@ public class ClientRestController {
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Client updateClient(@PathVariable Long id, @RequestBody Client client) {
-        client.setId(id);
+        client.setId(id);  // ⚠️ Lombok @Data génère setId() automatiquement
         return service.saveClient(client);
     }
 

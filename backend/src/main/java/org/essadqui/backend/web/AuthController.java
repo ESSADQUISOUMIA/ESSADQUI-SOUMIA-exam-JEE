@@ -1,8 +1,9 @@
 package org.essadqui.backend.web;
 
-
 import lombok.AllArgsConstructor;
-import org.essadqui.backend.security.*;
+import org.essadqui.backend.security.JwtUtils;
+import org.essadqui.backend.security.LoginRequest;
+import org.essadqui.backend.security.RegisterRequest;
 import org.springframework.http.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.*;
@@ -41,7 +42,6 @@ public class AuthController {
     @PostMapping("/register")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> register(@RequestBody RegisterRequest req) {
-        // Logique de création d'utilisateur
         return ResponseEntity.ok(Map.of("message", "Utilisateur créé avec succès"));
     }
 }
