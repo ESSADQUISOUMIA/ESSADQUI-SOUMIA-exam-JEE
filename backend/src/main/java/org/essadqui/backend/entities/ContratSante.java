@@ -3,7 +3,7 @@ package org.essadqui.backend.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.essadqui.backend.enums.NiveauCouverture;
-
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @DiscriminatorValue("SANTE")
 @Data @AllArgsConstructor @NoArgsConstructor

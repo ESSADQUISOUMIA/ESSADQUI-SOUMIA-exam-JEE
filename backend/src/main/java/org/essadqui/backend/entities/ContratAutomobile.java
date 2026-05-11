@@ -3,6 +3,7 @@ package org.essadqui.backend.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @DiscriminatorValue("AUTOMOBILE")
 @Data @AllArgsConstructor @NoArgsConstructor
