@@ -1,4 +1,6 @@
 package org.essadqui.backend.repositories;
 
-public class ContratHabitationRepository {
-}
+import org.essadqui.backend.entities.ContratHabitation;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ContratHabitationRepository extends JpaRepository<ContratHabitation, Long> {}

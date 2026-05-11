@@ -1,4 +1,13 @@
 package org.essadqui.backend.entities;
 
-public class ContratAutomobile {
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@DiscriminatorValue("AUTOMOBILE")
+@Data @AllArgsConstructor @NoArgsConstructor
+public class ContratAutomobile extends ContratAssurance {
+    private String numImmatriculation;
+    private String marque;
+    private String modele;
 }

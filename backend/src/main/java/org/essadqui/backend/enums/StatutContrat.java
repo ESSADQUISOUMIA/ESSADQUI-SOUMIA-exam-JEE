@@ -1,4 +1,5 @@
 package org.essadqui.backend.enums;
 
-public class StatutContrat {
+public enum StatutContrat {
+    EN_COURS, VALIDE, RESILIE
 }

@@ -1,4 +1,5 @@
 package org.essadqui.backend.enums;
 
-public class TypePaiement {
+public enum TypePaiement {
+    MENSUALITE, PAIEMENT_ANNUEL, PAIEMENT_EXCEPTIONNEL
 }

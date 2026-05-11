@@ -1,4 +1,14 @@
 package org.essadqui.backend.entities;
 
-public class ContratSante {
+import jakarta.persistence.*;
+import lombok.*;
+import org.essadqui.backend.enums.NiveauCouverture;
+
+@Entity
+@DiscriminatorValue("SANTE")
+@Data @AllArgsConstructor @NoArgsConstructor
+public class ContratSante extends ContratAssurance {
+    @Enumerated(EnumType.STRING)
+    private NiveauCouverture niveauCouverture;
+    private int nbPersonnesCouvertes;
 }

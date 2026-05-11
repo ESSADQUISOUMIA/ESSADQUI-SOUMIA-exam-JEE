@@ -1,4 +1,5 @@
 package org.essadqui.backend.enums;
 
-public class NiveauCouverture {
+public enum NiveauCouverture {
+    BASIQUE, INTERMEDIAIRE, PREMIUM
 }
