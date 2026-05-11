@@ -27,7 +27,6 @@ public class ContratRestController {
     public ContratDTO getContratById(@PathVariable Long id) {
         return service.getContratById(id);
     }
-
     @PostMapping
     @PreAuthorize("hasAnyRole('ROLE_EMPLOYE','ROLE_ADMIN')")
     public ContratDTO createContrat(@RequestBody ContratDTO dto) {
