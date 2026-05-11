@@ -2,13 +2,13 @@ package org.essadqui.backend.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import ma.enset.assurance.entities.enums.TypePaiement;
+import org.essadqui.backend.enums.TypePaiement;
 import java.util.Date;
 
 @Entity
 @Table(name = "paiements")
 @Data @AllArgsConstructor @NoArgsConstructor
-public class Paiement {
+public class Paiment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

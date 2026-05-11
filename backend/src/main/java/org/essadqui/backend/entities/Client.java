@@ -13,10 +13,10 @@ public class Client {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty @Size(min = 2, max = 50)
+    @NotEmpty@Size(min = 2, max = 50)
     private String nom;
 
-    @Email @NotEmpty
+    @Email
     private String email;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
