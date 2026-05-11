@@ -12,7 +12,7 @@ public class ContratDTO {
     private double tauxCouverture;
     private Long clientId;
     private String clientNom;
-    private String typeContrat; // AUTOMOBILE, HABITATION, SANTE
+    private String typeContrat;
 
     // Automobile
     private String numImmatriculation;
